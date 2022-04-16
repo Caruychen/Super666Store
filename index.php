@@ -1,6 +1,9 @@
 <?php
 	session_start();
+	if (!isset($_GET['page']) || $_GET['page'] == "home")
+		$page = "./app/views/home.html";
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -20,26 +23,8 @@
 				</ul>
 			</nav>
 		</header>	
-		<div class="top">
-			<h1 class="maintitle" >Superpower SuperShop</h1>
-		</div>
-		<div class="main-container">
-			<div class="gray leftnav">
-				<div><h2 class="large" >Shop by Category</h2></div>
-				<ul>
-					<li><a>Almighty</a></li>
-					<li><a>Superpower manipulations</a></li>
-					<li><a>Personal physical</a></li>
-					<li><a>Mental</a></li>
-					<li><a>Spiritual</a></li>
-					<li><a>Elemental</a></li>
-					<li><a>Transportation</a></li>
-					<li><a>Other</a></li>
-				</ul>
-			</div>
-			<div class="item-container">
-				<h2 class="xlarge">Almighty</h2>
-			</div>
+		<div class="view">
+			<?php include $page; ?>
 		</div>
 		<footer>
 			<hr />
