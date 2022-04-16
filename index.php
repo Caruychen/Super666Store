@@ -3,6 +3,12 @@
 	include 'store.php';
 	if (!isset($_GET['page']) || $_GET['page'] == "home")
 		$page = "./app/views/home.php";
+	if ($_GET['page'] == "login")
+		$page = "./app/authorization/login.php";
+	if ($_GET['page'] == "create")
+		$page = "./app/authorization/create.php";
+	if ($_GET['page'] == "modif")
+		$page = "./app/authorization/modif.php";
 ?>
 
 <!DOCTYPE html>
@@ -19,8 +25,11 @@
 		<header>
 			<nav>
 				<ul class="horizontal gray">
-					<li><a href="http://localhost:8080/rush00/index.php">Home</a></li>
-					<li><a href="#login">Login</a></li>
+					<li><a href="index.php">Home</a></li>
+					<li><a href="?page=login">Login</a></li>
+					<?php if($_SESSION['loggued_on_user']): ?>
+						<li> Hello <?php $_SESSION['loggued_on_user'];?>!</li>
+						<?php endif; ?>
 					<li class="rightli" style="float:right"><a href="#basket">Basket</a></li>
 				</ul>
 			</nav>
