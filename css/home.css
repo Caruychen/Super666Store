@@ -21,10 +21,25 @@ ul.horizontal > li {
 
 .rightli {
     float: right;
+    display: flex;
+    align-items: center;
+}
+
+.rightli > .basketcount {
+    float: left;
+    margin: 8px 0;
+    background-color: cornflowerblue;
+    color: white;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    font-size: 20px;
+    text-align: center;
 }
 
 nav > ul > li > a {
-    display: block;
+    display: inline-block;
     color: #666;
     text-align: center;
     padding: 14px 16px;

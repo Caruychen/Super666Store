@@ -21,4 +21,10 @@
         }
         fclose($handle);
     }
+
+    function sum_quantity($carry, $item)
+    {
+        $carry += $item['quantity'];
+        return $carry;
+    }
 ?>

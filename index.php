@@ -19,10 +19,12 @@
 		}
 		else
 			$_SESSION['basket'][$item['power']]['quantity'] += 1;
+		$_SESSION['total_quantity'] = array_reduce($_SESSION['basket'], "sum_quantity");
 	}
 	if ($_POST['removefrombasket'] == 'Remove')
 	{
 		unset($_SESSION['basket'][$_POST['remove_item']]);
+		$_SESSION['total_quantity'] = array_reduce($_SESSION['basket'], "sum_quantity");
 		$page = "./app/views/basket.php";
 	}
 	if ($_GET['page'] == "basket")
@@ -46,6 +48,11 @@
 					<li><a href="<?php echo $url; ?>">Home</a></li>
 					<li><a href="#login">Login</a></li>
 					<li class="rightli" style="float:right">
+						<?php 
+							$quantity = $_SESSION['total_quantity'];
+							if ($quantity > 0)
+								echo "<p class='basketcount'>$quantity</p>";
+						?>
 						<a href="<?php echo $url.'?page=basket'?>">Basket</a>
 					</li>
 				</ul>
