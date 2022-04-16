@@ -7,11 +7,11 @@
         $category = 'categories';
         foreach ($superpowers[$category] as $item)
         {
-            $link_name = str_replace(' ', '_', $item);
+            $category_link = str_replace(' ', '_', $item);
             echo "<div class='card'>
-                    <a href='$url$link_name'>
-                        <img src='./img/categories/$link_name.png' alt='$item' style='width:100%'>
-                        <div class='card-title'>
+                    <a href='$url?category=$item'>
+                        <img src='./img/categories/$category_link.png' alt='$item' style='width:100%'>
+                        <div class='cardtext'>
                             <h4><b>$item Powers</b><h4>
                         </div>
                     </a>

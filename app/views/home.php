@@ -2,6 +2,8 @@
     $nav = "./app/components/nav.php";
     if (!isset($_GET['category']))
         $items = "./app/components/categories.php";
+    else
+        $items = "./app/components/items.php";
 ?>
 <div class="home">
     <div class="top">

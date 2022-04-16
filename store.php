@@ -3,6 +3,7 @@
     $superpowers = array(
         'categories' => array()
     );
+    srand(0);
     if (($handle = fopen('./data/products/superpowers.csv', 'r')) !== FALSE) {
         while (($rawdata = fgetcsv($handle, 1000, ",")) !== FALSE) {
             $row++;
@@ -14,7 +15,8 @@
                 'power' => $rawdata[1],
                 'description' => $rawdata[2],
                 'marvel' => $rawdata[3],
-                'dc' => $rawdata[4]
+                'dc' => $rawdata[4],
+                'cost' => rand(1, 42)
             );
         }
         fclose($handle);
