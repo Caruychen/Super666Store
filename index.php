@@ -55,8 +55,7 @@
 					<li><a href="?page=login">Login</a></li>
 					<?php if($_SESSION['loggued_on_user'] && $_SESSION['loggued_on_user'] !== ""): ?>
 					<li> Hello <?php echo $_SESSION['loggued_on_user'];?>!</li>
-					<form method="POST" action="./app/authorization/logout.php">
-					<input type="button" name="Logout" value="logout"/></form>
+					<a href="./app/authorization/logout.php" style="width: 100%">Logout</a>
 					<?php endif; ?>
 					<li class="rightli" style="float:right">
 						<?php 
