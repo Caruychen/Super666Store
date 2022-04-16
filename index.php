@@ -1,6 +1,7 @@
 <?php
 	session_start();
-	include 'store.php';
+	include 'install.php';
+	$url = "http://localhost:8080/rush00/index.php";
 	if (!isset($_GET['page']) || $_GET['page'] == "home")
 		$page = "./app/views/home.php";
 	if ($_GET['page'] == "login")
@@ -9,6 +10,31 @@
 		$page = "./app/authorization/create.php";
 	if ($_GET['page'] == "modif")
 		$page = "./app/authorization/modif.php";
+	if ($_POST['addtobasket'] == 'Add To Basket')
+	{
+		$item = unserialize($_POST['superpower_item']);
+		if (!array_key_exists('basket', $_SESSION))
+			$_SESSION['basket'] = array();
+		if (!array_key_exists($item['power'], $_SESSION['basket']))
+		{
+			$_SESSION['basket'][$item['power']] = array(
+				'cost' => $item['cost'],
+				'category' => $item['category'],
+				'quantity' => 1
+			);
+		}
+		else
+			$_SESSION['basket'][$item['power']]['quantity'] += 1;
+		$_SESSION['total_quantity'] = array_reduce($_SESSION['basket'], "sum_quantity");
+	}
+	if ($_POST['removefrombasket'] == 'Remove')
+	{
+		unset($_SESSION['basket'][$_POST['remove_item']]);
+		$_SESSION['total_quantity'] = array_reduce($_SESSION['basket'], "sum_quantity");
+		$page = "./app/views/basket.php";
+	}
+	if ($_GET['page'] == "basket")
+		$page = "./app/views/basket.php";
 ?>
 
 <!DOCTYPE html>
@@ -19,18 +45,25 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="./css/home.css">
 		<link rel="stylesheet" href="./css/cards.css">
-		<title>Super666Shop</title>
+		<title>Superpower 666SuperShop</title>
 	</head>
 	<body>
 		<header>
 			<nav>
 				<ul class="horizontal gray">
-					<li><a href="index.php">Home</a></li>
+					<li><a href="<?php echo $url; ?>">Home</a></li>
 					<li><a href="?page=login">Login</a></li>
 					<?php if($_SESSION['loggued_on_user']): ?>
-						<li> Hello <?php $_SESSION['loggued_on_user'];?>!</li>
+						<li> Hello <?php echo $_SESSION['loggued_on_user'];?>!</li>
 						<?php endif; ?>
-					<li class="rightli" style="float:right"><a href="#basket">Basket</a></li>
+					<li class="rightli" style="float:right">
+						<?php 
+							$quantity = $_SESSION['total_quantity'];
+							if ($quantity > 0)
+								echo "<p class='basketcount'>$quantity</p>";
+						?>
+						<a href="<?php echo $url.'?page=basket'?>">Basket</a>
+					</li>
 				</ul>
 			</nav>
 		</header>	
