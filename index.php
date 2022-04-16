@@ -20,6 +20,27 @@
 				</ul>
 			</nav>
 		</header>	
+		<div class="top">
+			<h1 class="maintitle" >Superpower SuperShop</h1>
+		</div>
+		<div class="main-container">
+			<div class="gray leftnav">
+				<div><h2 class="large" >Shop by Category</h2></div>
+				<ul>
+					<li><a>Almighty</a></li>
+					<li><a>Superpower manipulations</a></li>
+					<li><a>Personal physical</a></li>
+					<li><a>Mental</a></li>
+					<li><a>Spiritual</a></li>
+					<li><a>Elemental</a></li>
+					<li><a>Transportation</a></li>
+					<li><a>Other</a></li>
+				</ul>
+			</div>
+			<div class="item-container">
+				<h2 class="xlarge">Almighty</h2>
+			</div>
+		</div>
 		<footer>
 			<hr />
 			<p>&copy parkharo & cchen 2022</p>

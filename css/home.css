@@ -1,15 +1,15 @@
-ul {
+nav > ul {
     display: block;
 }
 
-ul.horizontal {
+.horizontal {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
 
-ul.gray {
+.gray {
     border: 1px solid #e7e7e7;
     background-color: #f3f3f3;
 }
@@ -23,10 +23,61 @@ ul.horizontal > li {
     float: right;
 }
 
-ul > li > a {
+nav > ul > li > a {
     display: block;
     color: #666;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+}
+
+/* Body CSS */
+div.top {
+    text-align: center;
+}
+
+/* Main container */
+.main-container {
+    display: flex;
+}
+
+/* Left navigation */
+.leftnav {
+    max-width: 200px;
+    padding: 0 10px;
+}
+
+.leftnav > div > h2 {
+    margin: 10px 0;
+}
+
+.leftnav > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+}
+
+.leftnav > ul > li {
+    display: list-item;
+    padding-bottom: 5px;
+}
+
+/* Items container */
+.item-container {
+    margin: 0px 10px;
+}
+
+.item-container > h2 {
+    margin: 10px 0;
+}
+
+.large {
+    font-size: large;
+}
+.larger {
+    font-size: larger;
+}
+.xlarge {
+    font-size: 50el;
 }
