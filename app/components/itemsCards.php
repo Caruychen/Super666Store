@@ -7,15 +7,17 @@
             $power = $item['power'];
             $desc = $item['description'];
             $cost = $item['cost'];
-            $item_json = json_encode($item);
+            $item['category'] = $category;
+            $item_serialized = htmlentities(serialize($item));
             echo "<div class='card'>
                     <div>
-                        <img src='./img/categories/$img.png' alt='$item' style='width:100%'>
+                        <img src='./img/categories/$img.png' alt='$power' style='width:100%'>
                         <div class='cardtext'>
                             <h4><b>$power Powers</b><h4>
                             <p class='description'>$desc</p>
                             <p class='description'>Cost: $cost Souls</p>
                             <form action='index.php' method='post'>
+                                <input type='hidden' name='superpower_item' value='$item_serialized' />
                                 <input type='submit' name='addtobasket' value='Add To Basket'/>
                             </form>
                         </div>

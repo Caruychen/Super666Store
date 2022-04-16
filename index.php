@@ -1,11 +1,21 @@
 <?php
 	session_start();
-	include 'store.php';
+	include 'install.php';
 	$url = "http://localhost:8080/rush00/index.php";
 	if (!isset($_GET['page']) || $_GET['page'] == "home")
 		$page = "./app/views/home.php";
 	if ($_POST['addtobasket'] == 'Add To Basket' || $_GET['page'] == "basket")
+	{
 		$page = "./app/views/basket.php";
+		$item = unserialize($_POST['superpower_item']);
+		if (!isset($_SESSION['basket']) || !isset($_SESSION))
+			$_SESSION['basket'][$item['power']] = array(
+				'cost' => $item['cost'],
+				'category' => $item['category'],
+				'quantity' => 1
+			);
+		print_r(unserialize($item));
+	}
 ?>
 
 <!DOCTYPE html>
