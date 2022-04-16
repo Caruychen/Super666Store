@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	include 'store.php';
 	if (!isset($_GET['page']) || $_GET['page'] == "home")
 		$page = "./app/views/home.html";
 ?>
