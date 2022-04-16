@@ -7,7 +7,7 @@
 ?>
 <div class="home">
     <div class="top">
-        <h1 class="maintitle" >Superpower SuperShop</h1>
+        <h1 class="maintitle" >Superpower 666SuperShop</h1>
     </div>
     <div class="main-container">
         <?php include $nav; ?>

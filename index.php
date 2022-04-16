@@ -39,7 +39,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="./css/home.css">
 		<link rel="stylesheet" href="./css/cards.css">
-		<title>Super666Shop</title>
+		<title>Superpower 666SuperShop</title>
 	</head>
 	<body>
 		<header>
