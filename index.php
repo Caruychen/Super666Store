@@ -21,6 +21,11 @@
 			$_SESSION['basket'][$item['power']]['quantity'] += 1;
 		$page = "./app/views/basket.php";
 	}
+	if ($_POST['removefrombasket'] == 'Remove')
+	{
+		unset($_SESSION['basket'][$_POST['remove_item']]);
+		$page = "./app/views/basket.php";
+	}
 	if ($_GET['page'] == "basket")
 		$page = "./app/views/basket.php";
 ?>
