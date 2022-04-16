@@ -1,8 +1,11 @@
 <?php
 	session_start();
 	include 'store.php';
+	$url = "http://localhost:8080/rush00/index.php";
 	if (!isset($_GET['page']) || $_GET['page'] == "home")
 		$page = "./app/views/home.php";
+	if ($_POST['addtobasket'] == 'Add To Basket' || $_GET['page'] == "basket")
+		$page = "./app/views/basket.php";
 ?>
 
 <!DOCTYPE html>
@@ -19,9 +22,11 @@
 		<header>
 			<nav>
 				<ul class="horizontal gray">
-					<li><a href="http://localhost:8080/rush00/index.php">Home</a></li>
+					<li><a href="<?php echo $url; ?>">Home</a></li>
 					<li><a href="#login">Login</a></li>
-					<li class="rightli" style="float:right"><a href="#basket">Basket</a></li>
+					<li class="rightli" style="float:right">
+						<a href="<?php echo $url.'?page=basket'?>">Basket</a>
+					</li>
 				</ul>
 			</nav>
 		</header>	

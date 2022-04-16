@@ -7,6 +7,7 @@
             $power = $item['power'];
             $desc = $item['description'];
             $cost = $item['cost'];
+            $item_json = json_encode($item);
             echo "<div class='card'>
                     <div>
                         <img src='./img/categories/$img.png' alt='$item' style='width:100%'>
@@ -14,7 +15,7 @@
                             <h4><b>$power Powers</b><h4>
                             <p class='description'>$desc</p>
                             <p class='description'>Cost: $cost Souls</p>
-                            <form method='post'>
+                            <form action='index.php' method='post'>
                                 <input type='submit' name='addtobasket' value='Add To Basket'/>
                             </form>
                         </div>
@@ -23,3 +24,4 @@
         }
     ?>
 </div>
+
