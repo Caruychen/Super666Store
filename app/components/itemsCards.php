@@ -14,6 +14,9 @@
                             <h4><b>$power Powers</b><h4>
                             <p class='description'>$desc</p>
                             <p class='description'>Cost: $cost Souls</p>
+                            <form method='post'>
+                                <input type='submit' name='addtobasket' value='Add To Basket'/>
+                            </form>
                         </div>
                     </div>
                 </div>";
