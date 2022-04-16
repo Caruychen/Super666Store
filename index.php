@@ -53,9 +53,11 @@
 				<ul class="horizontal gray">
 					<li><a href="<?php echo $url; ?>">Home</a></li>
 					<li><a href="?page=login">Login</a></li>
-					<?php if($_SESSION['loggued_on_user']): ?>
-						<li> Hello <?php echo $_SESSION['loggued_on_user'];?>!</li>
-						<?php endif; ?>
+					<?php if($_SESSION['loggued_on_user'] && $_SESSION['loggued_on_user'] !== ""): ?>
+					<li> Hello <?php echo $_SESSION['loggued_on_user'];?>!</li>
+					<form method="POST" action="./app/authorization/logout.php">
+					<input type="button" name="Logout" value="logout"/></form>
+					<?php endif; ?>
 					<li class="rightli" style="float:right">
 						<?php 
 							$quantity = $_SESSION['total_quantity'];
