@@ -19,7 +19,6 @@
 		}
 		else
 			$_SESSION['basket'][$item['power']]['quantity'] += 1;
-		$page = "./app/views/basket.php";
 	}
 	if ($_POST['removefrombasket'] == 'Remove')
 	{
