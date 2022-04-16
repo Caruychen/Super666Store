@@ -2,8 +2,6 @@
     $nav = "./app/components/nav.php";
     if (!isset($_GET['category']))
         $items = "./app/components/categories.php";
-	if (!isset($_SESSION['itemview']))
-		$_SESSION['itemview'] = 'categories';
 ?>
 <div class="home">
     <div class="top">

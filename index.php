@@ -19,7 +19,7 @@
 		<header>
 			<nav>
 				<ul class="horizontal gray">
-					<li><a href="#home">Home</a></li>
+					<li><a href="http://localhost:8080/rush00/index.php">Home</a></li>
 					<li><a href="#login">Login</a></li>
 					<li class="rightli" style="float:right"><a href="#basket">Basket</a></li>
 				</ul>
