@@ -8,7 +8,11 @@
     </div>
     <div class="main-container">
         <div class="gray leftnav">
-            <h2>Validate</h2>
+           <button><h2>Validate</h2></button>
+           <div>
+               <h3>Total Cost:</h3>
+               <h3>Souls</h3>
+           </div>
         </div>
         <?php include "./app/components/basketCards.php"?>
     </div>
