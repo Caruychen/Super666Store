@@ -1,5 +1,7 @@
 <?php
     $nav = "./app/components/nav.php";
+    if (!isset($_GET['categories']))
+        $items = "./app/components/categories.php";
 ?>
 <div class="home">
     <div class="top">
@@ -7,8 +9,6 @@
     </div>
     <div class="main-container">
         <?php include $nav; ?>
-        <div class="item-container">
-            <h2 class="xlarge">Almighty</h2>
-        </div>
+        <?php include $items; ?>
     </div>
 </div>
