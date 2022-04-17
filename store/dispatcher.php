@@ -65,7 +65,7 @@
 				if ($user['login'] === $_SESSION['loggued_on_user'])
 					unset($users[$key]);
 			}
-			mk_userdb_file($users);
+			set_users($users);
 			logout();
 		} 
 	}

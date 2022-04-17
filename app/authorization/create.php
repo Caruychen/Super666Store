@@ -28,7 +28,7 @@
 			$entry['passwd'] = hash('sha256', $_POST['passwd']);
 			$users[] = $entry;
 
-			mk_userdb_file($users);
+			set_users($users);
 			header('Location: index.php?page=login');
 			echo "USER HAS BEEN CREATED";
 		}
