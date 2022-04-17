@@ -7,7 +7,11 @@
     }
     function compute_summary()
     {
-		$_SESSION['total_quantity'] = array_reduce($_SESSION['basket'], "sum_quantity");
-		$_SESSION['total_cost'] = array_reduce($_SESSION['basket'], "sum_cost");
+      $_SESSION['total_quantity'] = array_reduce($_SESSION['basket'], "sum_quantity");
+      $_SESSION['total_cost'] = array_reduce($_SESSION['basket'], "sum_cost");
+    }
+    function logout()
+    {
+      unset($_SESSION['loggued_on_user']);
     }
 ?>
