@@ -10,6 +10,10 @@
 		$page = "./app/authorization/create.php";
 	if ($_GET['page'] == "modif")
 		$page = "./app/authorization/modif.php";
+	if ($_GET['page'] == "account")
+		$page = "./app/views/account.php";
+	if ($_GET['page'] == 'delete')
+		$page = "./app/authorization/delete.php";
 	if ($_POST['addtobasket'] == 'Add To Basket')
 	{
 		$item = unserialize($_POST['superpower_item']);
@@ -63,6 +67,7 @@
 					<li><a href="?page=login">Login</a></li>
 					<?php if($_SESSION['loggued_on_user'] && $_SESSION['loggued_on_user'] !== ""): ?>
 					<li> Hello <?php echo $_SESSION['loggued_on_user'];?>!</li>
+					<li><a href="?page=account">Manage account</a></li>
 					<a href="./app/authorization/logout.php" style="width: 100%">Logout</a>
 					<?php endif; ?>
 					<li class="rightli" style="float:right">
