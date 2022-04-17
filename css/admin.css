@@ -1,0 +1,20 @@
+.admin-table
+{
+    font-family: 'Palanquin', sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: black;
+    color: white;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}

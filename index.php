@@ -18,6 +18,7 @@
 	<!-- CSS  --> 		
 		<link rel="stylesheet" href="./css/home.css">
 		<link rel="stylesheet" href="./css/cards.css">
+		<link rel="stylesheet" href="./css/admin.css">
 		<title>Superpower 666SuperShop</title>
 	</head>
 	<body>

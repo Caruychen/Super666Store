@@ -36,4 +36,23 @@
             fclose($handle);
         }
     }
+    function get_all_orders()
+    {
+        $orders = array();
+        if ($handle = fopen('./data/orders/orders.csv', 'r'))
+        {
+            flock($handle, LOCK_EX);
+			while (($rawdata = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                $orders[] = array(
+                    'date' => $rawdata[0],
+                    'user' => $rawdata[1],
+                    'product' => $rawdata[2],
+                    'quantity' => $rawdata[3] 
+                );
+            }
+            flock($handle, LOCK_UN);
+            fclose($handle);
+        }
+        return ($orders);
+    }
 ?>
