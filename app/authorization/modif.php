@@ -25,7 +25,7 @@
 
 			if ($update == true)
 			{
-				mk_userdb_file($users);
+				set_users($users);
 				header('Location: index.php?page=account');
 				echo "OK\n";
 			} else 

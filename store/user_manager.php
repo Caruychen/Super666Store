@@ -22,7 +22,7 @@
         return unserialize(file_get_contents($file_path));
     }
 
-    function mk_userdb_file($users)
+    function set_users($users)
     {
         global $file_path;
 		file_put_contents($file_path, serialize($users));
