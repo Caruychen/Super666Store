@@ -38,7 +38,7 @@
 					<?php endif; ?>
 					<li class="rightli" style="float:right">
 						<?php 
-							$quantity = $_SESSION['total_quantity'];
+							$quantity = isset($_SESSION['total_quantity']) ? $_SESSION['total_quantity'] : 0;
 							if ($quantity > 0)
 								echo "<p class='basketcount'>$quantity</p>";
 						?>
