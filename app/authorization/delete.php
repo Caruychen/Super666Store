@@ -1,5 +1,5 @@
 <?php
-	if (!isset($_SESSION['loggued_on_user']) ||empty($_SESSION['loggued_on_user']))
+	if (!is_loggedin())
 		header('Location: index.php?page=login');
 ?>
 

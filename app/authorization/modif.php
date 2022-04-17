@@ -1,41 +1,38 @@
 <?PHP
-
 	if (($_POST['login'] === "" || $_POST['oldpw'] === ""|| $_POST['newpw'] === "")  &&  $_POST['submit'] === "OK")
 		echo "<h3 style='color: red'>Please fill all the fields</h3>";
-
 	if ($_POST['submit'] === "OK")
 	{
-	if ($_POST['login'] && $_POST['newpw'] && $_POST['oldpw'])
-	{
-	
-		if (file_exists("./app/authorization/private/passwd"))
+		if ($_POST['login'] && $_POST['newpw'] && $_POST['oldpw'])
 		{
-			$update = false;
-			$users = unserialize(file_get_contents("./app/authorization/private/passwd"));
-			foreach ($users as $key => $user)
+			if (userdb_exists())
 			{
-				if ($user['login'] === $_POST['login'])
+				$update = false;
+				$users = get_users();
+				foreach ($users as $key => $user)
 				{
-					if ($user['passwd'] !== hash('sha256', $_POST['oldpw']))
-						echo "<h3 style='color: red'>Old password incorrect</h3>";
-					else {
-					$users[$key]['passwd'] = hash('sha256', $_POST['newpw']);
-					$update = true;
-					}
-				}	
+					if ($user['login'] === $_POST['login'])
+					{
+						if ($user['passwd'] !== hash('sha256', $_POST['oldpw']))
+							echo "<h3 style='color: red'>Old password incorrect</h3>";
+						else {
+						$users[$key]['passwd'] = hash('sha256', $_POST['newpw']);
+						$update = true;
+						}
+					}	
+				}
 			}
-		}
 
-		if ($update == true)
-		{
-			file_put_contents('./app/authorization/private/passwd', serialize($users));
-			header('Location: index.php?page=account');
-			echo "OK\n";
-		} else 
+			if ($update == true)
+			{
+				mk_userdb_file($users);
+				header('Location: index.php?page=account');
+				echo "OK\n";
+			} else 
+				echo "ERROR\n";
+		} else
 			echo "ERROR\n";
-	} else
-		echo "ERROR\n";
-}
+	}
 ?>
 
 <h2>Change password</h2>
