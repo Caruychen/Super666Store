@@ -1,6 +1,6 @@
 <?PHP
 	if ($_SESSION['loggued_on_user'] !== 'admin')
-		header('Location: index.php?page=');
+		header('Location: index.php?page=home');
 	if (isset($_GET['admin']))
 	{
 		switch ($_GET['admin'])
