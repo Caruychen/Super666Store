@@ -37,7 +37,9 @@
 	}
 	if ($_GET['page'] == "basket")
 		$page = "./app/views/basket.php";
-	if (isset($_POST['validate']) && $_POST['validate'] == "Validate" && !empty($_SESSION['basket']))
+	if (isset($_POST['validate']) && $_POST['validate'] == "Validate"
+		&& !empty($_SESSION['basket'])
+		&& $_SESSION['loggued_on_user'] && $_SESSION['loggued_on_user'] !== "")
 	{
 		print_r($_SESSION);
 	}

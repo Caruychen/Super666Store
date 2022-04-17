@@ -13,7 +13,7 @@
     </form>
     <div>
         <h3>Total Cost:</h3>
-        <h3><?php echo $cost; ?>Souls</h3>
+        <h3><?php echo $cost; ?> Souls</h3>
     </div>
 </div>
 <?php include "./app/components/basketCards.php"?>
