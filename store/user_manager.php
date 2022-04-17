@@ -1,8 +1,6 @@
 <?php
-
     $dir = "./app/authorization/private/";
-    $file_path = $dir."passwd";
-
+    $file_path = $dir."passwd.csv";
     function userdb_exists()
     {
         global $file_path;
@@ -19,13 +17,31 @@
     function get_users()
     {
         global $file_path;
-        return unserialize(file_get_contents($file_path));
+        $users = array();
+        if (($handle = fopen($file_path, 'r')) !== FALSE) {
+            flock($handle, LOCK_EX);
+            while (($rawdata = fgetcsv($handle, 1000, ",")) !== FALSE)
+            {
+                $users[] = array(
+                    'login' => $rawdata[0],
+                    'passwd' => $rawdata[1]
+                );
+            }
+            flock($handle, LOCK_UN);
+            fclose($handle);
+        }
+        return $users;
     }
-
     function set_users($users)
     {
         global $file_path;
-		file_put_contents($file_path, serialize($users));
-        print_r($users);
+       if ($handle = fopen($file_path, 'w'))
+        {
+            flock($handle, LOCK_EX);
+            foreach ($users as $entry)
+                fputcsv($handle, [$entry['login'], $entry['passwd']]);
+            flock($handle, LOCK_UN);
+            fclose($handle);
+        }
     }
 ?>
