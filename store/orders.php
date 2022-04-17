@@ -37,7 +37,3 @@
         }
     }
 ?>
-
-<h1>Your orders</h1>
-
-<div>I dont know how to display them sorry.</div>
