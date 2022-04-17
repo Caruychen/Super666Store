@@ -1,5 +1,6 @@
 <?php
     $basket = $_SESSION['basket'];
+    $quantity= $_SESSION['total_quantity'];
 ?>
 
 <div class="basket">
@@ -7,13 +8,13 @@
         <h1 class="maintitle">Basket</h1>
     </div>
     <div class="main-container">
-        <div class="gray leftnav">
-           <button><h2>Validate</h2></button>
-           <div>
-               <h3>Total Cost:</h3>
-               <h3>Souls</h3>
-           </div>
-        </div>
-        <?php include "./app/components/basketCards.php"?>
+        <?php
+            if ($quantity > 0):
+                include "./app/components/basketForm.php";
+            else:
+                include "./app/components/basketEmpty.php";
+            endif;
+        ?>
+        
     </div>
 </div>

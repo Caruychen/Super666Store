@@ -27,4 +27,9 @@
         $carry += $item['quantity'];
         return $carry;
     }
+    function sum_cost($carry, $item)
+    {
+        $carry += $item['quantity'] * $item['cost'];
+        return $carry;
+    }
 ?>

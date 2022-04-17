@@ -26,15 +26,21 @@
 		else
 			$_SESSION['basket'][$item['power']]['quantity'] += 1;
 		$_SESSION['total_quantity'] = array_reduce($_SESSION['basket'], "sum_quantity");
+		$_SESSION['total_cost'] = array_reduce($_SESSION['basket'], "sum_cost");
 	}
 	if ($_POST['removefrombasket'] == 'Remove')
 	{
 		unset($_SESSION['basket'][$_POST['remove_item']]);
 		$_SESSION['total_quantity'] = array_reduce($_SESSION['basket'], "sum_quantity");
+		$_SESSION['total_cost'] = array_reduce($_SESSION['basket'], "sum_cost");
 		$page = "./app/views/basket.php";
 	}
 	if ($_GET['page'] == "basket")
 		$page = "./app/views/basket.php";
+	if (isset($_POST['validate']) && $_POST['validate'] == "Validate" && !empty($_SESSION['basket']))
+	{
+		print_r($_SESSION);
+	}
 ?>
 
 <!DOCTYPE html>
