@@ -16,7 +16,7 @@
 		if ($_GET['page'] == "basket")
 			$page = "./app/views/basket.php";
 		if ($_GET['page'] == 'admin')
-			$page = "./store/admin.php";
+			$page = "./app/views/admin.php";
 	}
 	if (isset($_GET['logout']) && $_GET['logout'] == 'true')
 	{
