@@ -12,12 +12,13 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- FONTS -->  
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Palanquin:wght@100;400;700&family=Roboto:wght@100;700&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Palanquin:wght@100;400;700&family=Roboto:wght@100;700&display=swap" rel="stylesheet">
 	<!-- CSS  --> 		
-<link rel="stylesheet" href="./css/home.css">
+		<link rel="stylesheet" href="./css/home.css">
 		<link rel="stylesheet" href="./css/cards.css">
+		<link rel="stylesheet" href="./css/admin.css">
 		<title>Superpower 666SuperShop</title>
 	</head>
 	<body>
@@ -38,7 +39,7 @@
 					<?php endif; ?>
 					<li class="rightli" style="float:right">
 						<?php 
-							$quantity = $_SESSION['total_quantity'];
+							$quantity = isset($_SESSION['total_quantity']) ? $_SESSION['total_quantity'] : 0;
 							if ($quantity > 0)
 								echo "<p class='basketcount'>$quantity</p>";
 						?>
