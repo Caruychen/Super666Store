@@ -1,7 +1,9 @@
 <?php 
     include "./store/sessions_manager.php";
+    include "./store/dispatcher.php";
     function load_superpowers(&$superpowers)
     {
+        $row = 0;
         srand(0);
         if (($handle = fopen('./data/products/superpowers.csv', 'r')) !== FALSE) {
             while (($rawdata = fgetcsv($handle, 1000, ",")) !== FALSE) {
@@ -39,7 +41,6 @@
 ?>
 
 <?php
-    $row = 0;
     $superpowers = array(
         'categories' => array()
     );
