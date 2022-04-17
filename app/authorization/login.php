@@ -16,7 +16,7 @@
 
 	<body style="text-align: center;">
 
-		<h1 style="text-align:center">SUPER666SHOP</h1>
+		<h1 class="maintitle">SUPER666SHOP</h1>
 		<h2>Login to the shop</h2>
 		<form action="" method="POST">
 

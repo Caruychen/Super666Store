@@ -36,7 +36,7 @@
 ?>
 
 <body style="text-align: center;">
-		<h1><a href='index.php'>SUPER666SHOP</a></h1>
+		<h1 class="maintitle">SUPER666SHOP</h1>
 		<h2>Create an account</h1>
 		<form action="" method="POST">
 
