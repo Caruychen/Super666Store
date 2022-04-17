@@ -25,14 +25,12 @@
 		}
 		else
 			$_SESSION['basket'][$item['power']]['quantity'] += 1;
-		$_SESSION['total_quantity'] = array_reduce($_SESSION['basket'], "sum_quantity");
-		$_SESSION['total_cost'] = array_reduce($_SESSION['basket'], "sum_cost");
+		compute_summary();
 	}
 	if ($_POST['removefrombasket'] == 'Remove')
 	{
 		unset($_SESSION['basket'][$_POST['remove_item']]);
-		$_SESSION['total_quantity'] = array_reduce($_SESSION['basket'], "sum_quantity");
-		$_SESSION['total_cost'] = array_reduce($_SESSION['basket'], "sum_cost");
+		compute_summary();
 		$page = "./app/views/basket.php";
 	}
 	if ($_GET['page'] == "basket")
@@ -41,7 +39,7 @@
 		&& !empty($_SESSION['basket'])
 		&& $_SESSION['loggued_on_user'] && $_SESSION['loggued_on_user'] !== "")
 	{
-		print_r($_SESSION);
+		validate_basket();
 	}
 ?>
 
