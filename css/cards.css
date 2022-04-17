@@ -20,11 +20,12 @@
   
 .cardtext {
     padding: 2px 16px;
+	position: relative;
 }
 
 .description {
     font-weight: normal;
-	position: absolute;
+	position: relative;
 	bottom: 0px;
 }
 
