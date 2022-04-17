@@ -6,7 +6,7 @@
 ?>
 <div class="account">
     <div class="top">
-        <h1 class="maintitle" >Account</h1>
+        <h1 class="maintitle" >AccounT</h1>
     </div>
     <div class="main-container">
 		<div class="gray leftnav">
