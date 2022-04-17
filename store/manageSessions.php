@@ -18,4 +18,8 @@
     {
       return (isset($_SESSION['loggued_on_user']) && !empty($_SESSION['loggued_on_user']));
     }
+    function is_admin()
+    {
+      return (isset($_SESSION['loggued_on_user']) && $_SESSION['loggued_on_user'] === 'admin');
+    }
 ?>

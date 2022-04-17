@@ -5,13 +5,13 @@
     width: 100%;
 }
 
-td, th {
+.admin-table td, .admin-table th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
 }
 
-th {
+.admin-table th {
     background-color: black;
     color: white;
 }

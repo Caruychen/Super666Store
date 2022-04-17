@@ -18,7 +18,7 @@
                     foreach ($array as $item)
                     {
                         echo "<tr>";
-                        echo "<td>$id</td>";
+                        echo "<td id='productid'>$id</td>";
                         echo "<td>$item[power]</td>";
                         echo "<td>$category</td>";
                         echo "<td>$item[cost]</td>";
