@@ -14,4 +14,30 @@
             clear_basket();
         }
     }
+	function get_user_orders($user)
+    {
+        date_default_timezone_set('Europe/Helsinki');
+        if ($handle = fopen('./data/orders/orders.csv', 'r'))
+        {
+            flock($handle, LOCK_EX);
+			while (($rawdata = fgetcsv($handle, 1000, ",")) !== FALSE) {
+				$row++;
+				if ($rawdata[1] === $user)
+				{
+					$userorders[] = array(
+						'date' => $rawdata[0],
+						'product' => $rawdata[2],
+						'quantity' => $rawdata[3] 
+					);
+				}
+				}
+       
+            flock($handle, LOCK_UN);
+            fclose($handle);
+        }
+    }
 ?>
+
+<h1>Your orders</h1>
+
+<div>I dont know how to display them sorry.</div>
