@@ -35,5 +35,6 @@
             flock($handle, LOCK_UN);
             fclose($handle);
         }
+		return ($userorders);
     }
 ?>
