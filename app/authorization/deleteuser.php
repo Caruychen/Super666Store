@@ -1,10 +1,11 @@
 <?php
 session_start();
+include "./app/authorization/user_manager.php";
 if ($_POST['submit'] === 'OK')
 {
 	if (file_exists("./private/passwd"))
 	{
-		$users = unserialize(file_get_contents("./private/passwd"));
+		$users = get_users();
 		foreach ($users as $key => $user)
 		{
 			echo $_SESSION['loggued_on_user'];
@@ -13,7 +14,7 @@ if ($_POST['submit'] === 'OK')
 				unset($users[$key]);
 			}
 		}
-		file_put_contents("./private/passwd", serialize($users));
+		mk_userdb_file($users);
 		header('Location: ./logout.php');
 	} 
 }

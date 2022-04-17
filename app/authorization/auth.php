@@ -1,9 +1,10 @@
 <?PHP
+	include "./app/authorization/user_manager.php";
 	function auth($login, $passwd)
 	{
-		if (file_exists("./app/authorization/private/passwd"))
+		if (userdb_exists())
 		{
-			$users = unserialize(file_get_contents("./app/authorization/private/passwd"));
+			$users = get_users();
 			foreach ($users as $key => $user)
 			{
 				if ($user['login'] === $login)

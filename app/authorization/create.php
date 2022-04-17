@@ -1,5 +1,5 @@
 <?PHP
-
+	include "./app/authorization/user_manager.php";
 	if ($_POST['login'] === "" || $_POST['passwd'] === "" || $_POST['verpasswd'] === "")
 		echo "<h3 style='color: red'>Fill all the fields</h3>";
 	if ($_POST['passwd'] !== $_POST['verpasswd'])
@@ -7,13 +7,11 @@
 
 	if ($_POST['login'] && $_POST['passwd'] && $_POST['passwd'] === $_POST['verpasswd'])
 	{
-		if (!file_exists("./app/authorization/private/" || !file_exists("./app/authorization/private/passwd"))) {
-			mkdir('./app/authorization/private');
-		}
+		mk_userdb_if_not_exist();
 		$exist = false;
-		if (file_exists("./app/authorization/private/passwd"))
+		if (userdb_exists())
 		{
-			$users = unserialize(file_get_contents("./app/authorization/private/passwd"));
+			$users = get_users();
 			foreach ($users as $key => $user)
 			{
 				if ($user['login'] === $_POST['login'])
@@ -31,7 +29,7 @@
 			$entry['passwd'] = hash('sha256', $_POST['passwd']);
 			$users[] = $entry;
 
-			file_put_contents("./app/authorization/private/passwd", serialize($users));
+			mk_userdb_file($users);
 			header('Location: index.php?page=login');
 			echo "USER HAS BEEN CREATED";
 		}
