@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	include 'install.php';
+	include "./app/authorization/user_manager.php";
 	$url = "http://localhost:8080/rush00/index.php";
 	if (!isset($_GET['page']) || $_GET['page'] == "home")
 		$page = "./app/views/home.php";
@@ -14,6 +15,8 @@
 		$page = "./app/views/account.php";
 	if ($_GET['page'] == 'delete')
 		$page = "./app/authorization/delete.php";
+	if ($_GET['page'] == "basket")
+		$page = "./app/views/basket.php";
 	if ($_POST['addtobasket'] == 'Add To Basket')
 	{
 		$item = unserialize($_POST['superpower_item']);
@@ -37,13 +40,28 @@
 		compute_summary();
 		$page = "./app/views/basket.php";
 	}
-	if ($_GET['page'] == "basket")
-		$page = "./app/views/basket.php";
 	if (isset($_POST['validate']) && $_POST['validate'] == "Validate"
 		&& !empty($_SESSION['basket'])
 		&& $_SESSION['loggued_on_user'] && $_SESSION['loggued_on_user'] !== "")
 	{
 		validate_basket();
+	}
+	if (isset($_POST['deleteuser']) && $_POST['deleteuser'] == "OK")
+	{
+		if (file_exists("./private/passwd"))
+		{
+			$users = get_users();
+			foreach ($users as $key => $user)
+			{
+				echo $_SESSION['loggued_on_user'];
+				if ($user['login'] === $_SESSION['loggued_on_user'])
+				{
+					unset($users[$key]);
+				}
+			}
+			mk_userdb_file($users);
+			header('Location: ./logout.php');
+		} 
 	}
 ?>
 

@@ -1,5 +1,4 @@
 <?PHP
-	include "./app/authorization/user_manager.php";
 	if ($_POST['login'] === "" || $_POST['passwd'] === "" || $_POST['verpasswd'] === "")
 		echo "<h3 style='color: red'>Fill all the fields</h3>";
 	if ($_POST['passwd'] !== $_POST['verpasswd'])

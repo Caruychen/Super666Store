@@ -1,5 +1,4 @@
 <?PHP
-	include "./app/authorization/user_manager.php";
 	function auth($login, $passwd)
 	{
 		if (userdb_exists())
