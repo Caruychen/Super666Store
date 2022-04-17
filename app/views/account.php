@@ -18,27 +18,24 @@
 		</div>
 		<div class="item-container">
 			<h2 class="xlarge">Your orders</h2>
-			<div class="order-list">
-				<div class='order-item'>
-				<p>Order</p>
-				<p>Quantity</p>
-				</div>
+			<table class="admin-table">
+            <tr>
+                <th>Timestamp</th>
+                <th>Superpower</th>
+                <th>Quantity</th>
+            </tr>
 				<?php 
 					$orderlist = get_user_orders($_SESSION['loggued_on_user']);
 					foreach ($orderlist as $order)
 					{
-						$product = $order['product'];
-						$quantity = $order['quantity'];
-						echo "<div class='order-item'>
-
-							<p class='item-align-left'><b>$product</b></p>
-
-							<p class='item-align-right'><b>$quantity</b></p>
-						
-						</div>";
+							echo "<tr>";
+							echo "<td>$order[date]</td>";
+							echo "<td>$order[product]</td>";
+							echo "<td>$order[quantity]</td>";
+							echo "</tr>";
 					}
 				?>
-			</div>
+			</table>
 		</div>
     </div>
 </div>

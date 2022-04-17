@@ -16,10 +16,12 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Palanquin:wght@100;400;700&family=Roboto:wght@100;700&display=swap" rel="stylesheet">
 	<!-- CSS  --> 		
+
+		<link rel="stylesheet" href="./css/indoctrine/stylesheet.css">
 		<link rel="stylesheet" href="./css/home.css">
 		<link rel="stylesheet" href="./css/cards.css">
 		<link rel="stylesheet" href="./css/admin.css">
-		<title>Superpower 666SuperShop</title>
+		<title>SUPER666SHOP</title>
 	</head>
 	<body>
 		<header>

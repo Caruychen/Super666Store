@@ -17,7 +17,9 @@
 			$page = "./app/views/basket.php";
 		if ($_GET['page'] == 'admin')
 			$page = "./app/views/admin.php";
-	}
+		if ($_GET['page'] == 'forgot')
+			$page = "./app/authorization/forgot.php"; 
+		}
 	if (isset($_GET['logout']) && $_GET['logout'] == 'true')
 	{
 		logout();

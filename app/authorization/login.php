@@ -33,5 +33,5 @@
 		</form>
 		<br />
 		<a href="?page=create">Create account</a>
-		<a href="?page=modif">Change password</a>
+		<a href="?page=forgot">Forgot password?</a>
 	</body>
