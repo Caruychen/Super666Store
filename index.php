@@ -36,7 +36,7 @@
 						<li class="rightli" style="float:right"><a href="?page=account">Manage account</a></li>
 						<li class="rightli" style="float:right"><a href="?logout=true" style="width: 100%">Logout</a></li>
 					<?php endif; ?>
-					<?php if($_SESSION['loggued_on_user'] === 'admin'): ?>
+					<?php if (is_admin()): ?>
 						<li><a href="?page=admin">Manage store</a></li>
 					<?php endif; ?>
 					<li class="rightli" style="float:right">
