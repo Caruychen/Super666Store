@@ -26,5 +26,6 @@
     {
         global $file_path;
 		file_put_contents($file_path, serialize($users));
+        print_r($users);
     }
 ?>
