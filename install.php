@@ -1,5 +1,5 @@
 <?php 
-    include "./store/orders.php";
+    include "./store/manageOrders.php";
 	include "./store/manageUsers.php";
     include "./store/manageSessions.php";
     include "./store/manageProducts.php";
