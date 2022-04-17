@@ -1,6 +1,10 @@
 <?php
     $dir = "./app/authorization/private/";
     $file_path = $dir."passwd.csv";
+    function _get_userlogin($user)
+    {
+        return $user['login'];
+    }
     function userdb_exists()
     {
         global $file_path;
@@ -43,5 +47,13 @@
             flock($handle, LOCK_UN);
             fclose($handle);
         }
+    }
+    function del_user($login)
+    {
+        $users = get_users();
+        $logins = array_map('_get_userlogin', $users);
+        $drop_key = array_search($login, $logins);
+        unset($users[$drop_key]);
+        set_users($users);
     }
 ?>

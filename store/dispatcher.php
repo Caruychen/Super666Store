@@ -71,4 +71,8 @@
 			logout();
 		} 
 	}
+	if (isset($_POST['adminuser']) && $_POST['adminuser'] == "Remove" && is_admin())
+	{
+		del_user($_POST['logintoremove']);
+	}
 ?>

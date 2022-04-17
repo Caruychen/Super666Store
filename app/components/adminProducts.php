@@ -2,6 +2,7 @@
     <h2 class="xlarge">Manage products</h2>
     <div>
         <table class="admin-table">
+            <col width="40px"/>
             <tr>
                 <th>ID</th>
                 <th>Superpower</th>
