@@ -2,6 +2,7 @@
     <h2 class="xlarge">Manage products</h2>
     <div>
         <table class="admin-table">
+            <col width="40px"/>
             <tr>
                 <th>ID</th>
                 <th>Superpower</th>
@@ -18,7 +19,7 @@
                     foreach ($array as $item)
                     {
                         echo "<tr>";
-                        echo "<td id='productid'>$id</td>";
+                        echo "<td>$id</td>";
                         echo "<td>$item[power]</td>";
                         echo "<td>$category</td>";
                         echo "<td>$item[cost]</td>";
