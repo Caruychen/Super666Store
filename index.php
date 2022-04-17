@@ -48,12 +48,18 @@
 ?>
 
 <!DOCTYPE html>
+
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="./css/home.css">
+	<!-- FONTS -->  
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Palanquin:wght@100;400;700&family=Roboto:wght@100;700&display=swap" rel="stylesheet">
+	<!-- CSS  --> 		
+<link rel="stylesheet" href="./css/home.css">
 		<link rel="stylesheet" href="./css/cards.css">
 		<title>Superpower 666SuperShop</title>
 	</head>
@@ -62,11 +68,13 @@
 			<nav>
 				<ul class="horizontal gray">
 					<li><a href="<?php echo $url; ?>">Home</a></li>
+					<?php if(!$_SESSION['loggued_on_user'] || $_SESSION['loggued_on_user'] === ""): ?>
 					<li><a href="?page=login">Login</a></li>
+					<?php endif; ?>
 					<?php if($_SESSION['loggued_on_user'] && $_SESSION['loggued_on_user'] !== ""): ?>
-					<li> Hello <?php echo $_SESSION['loggued_on_user'];?>!</li>
-					<li><a href="?page=account">Manage account</a></li>
-					<a href="./app/authorization/logout.php" style="width: 100%">Logout</a>
+					<li class="Center"><a style="pointer-events: none; text-weight: bold;">Hello <?php echo $_SESSION['loggued_on_user'];?>!</a></li>
+					<li class="rightli" style="float:right"><a href="?page=account">Manage account</a></li>
+					<li class="rightli" style="float:right"><a href="./app/authorization/logout.php" style="width: 100%">Logout</a></li>
 					<?php endif; ?>
 					<li class="rightli" style="float:right">
 						<?php 

@@ -1,3 +1,27 @@
+* {
+	font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+	font-family: 'Palanquin', sans-serif;
+	color: #2f2f2f;
+}
+
+h2 {
+	font-family: 'Palanquin', sans-serif;
+	font-weight: thin;
+	color: #2f2f2f;
+}
+a {
+	text-decoration: none;
+	color: #2f2f2f;
+	font-weight: medium;
+}
+
+a:hover {
+	text-shadow: 1px 1px rgb(210, 208, 208) ;
+}
+
 nav > ul {
     display: block;
 }
@@ -14,6 +38,24 @@ nav > ul {
     background-color: #f3f3f3;
 }
 
+div.question {
+	text-align: center;
+	left: 50%;
+	border: 1px 1px #2f2f2f;
+	border-radius: 10px;
+}	
+
+ul.ynbuttons {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+li.but {
+	list-style-type: none;
+	margin: 3px;
+}
 ul.horizontal > li {
     float: left;
     display: list-item;
@@ -51,6 +93,11 @@ div.top {
     text-align: center;
 }
 
+li.Center {
+	position: fixed;
+	left: 50%;
+	font-family: 'Palanquin', sans-serif !important;
+}
 /* Main container */
 .main-container {
     display: flex;

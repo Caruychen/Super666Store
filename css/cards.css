@@ -9,6 +9,9 @@
     min-width: 200px;
     width: 10vw;
     margin: 10px 10px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
 }
 
 .card:hover {
@@ -21,6 +24,8 @@
 
 .description {
     font-weight: normal;
+	position: absolute;
+	bottom: 0px;
 }
 
 .basketList {
