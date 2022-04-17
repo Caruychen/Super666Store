@@ -1,7 +1,6 @@
 <?php
 	session_start();
 	include 'install.php';
-	include "./app/authorization/user_manager.php";
 	$url = "http://localhost:8080/rush00/index.php";
 ?>
 

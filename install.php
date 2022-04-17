@@ -1,4 +1,5 @@
 <?php 
+	include "./store/user_manager.php";
     include "./store/sessions_manager.php";
     include "./store/dispatcher.php";
     function load_superpowers(&$superpowers)
