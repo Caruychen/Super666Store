@@ -10,7 +10,7 @@
             $category_link = str_replace(' ', '_', $item);
             echo "<div class='card'>
                     <a href='$url?category=$item'>
-                        <img src='./img/categories/$category_link.png' alt='$item' style='width:100%'>
+                        <img class='itemImage' src='./img/categories/$category_link.png' alt='$item' style='width:100%'>
                         <div class='cardtext'>
                             <h4><b>$item Powers</b><h4>
                         </div>

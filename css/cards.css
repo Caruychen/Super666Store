@@ -10,8 +10,8 @@
     width: 10vw;
     margin: 10px 10px;
     display: flex;
-    justify-content: flex-end;
     flex-direction: column;
+	border-radius: 10px;
 }
 
 .card:hover {
@@ -27,6 +27,14 @@
     font-weight: normal;
 	position: relative;
 	bottom: 0px;
+}
+
+.itemButton {
+	margin-bottom: 5px;
+}
+
+.itemImage {
+	border-radius: 10px 10px 0 0;
 }
 
 .basketList {

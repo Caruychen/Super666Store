@@ -11,12 +11,12 @@
             $item_serialized = htmlentities(serialize($item));
             echo "<div class='card'>
                     <div>
-                        <img src='./img/categories/$img.png' alt='$power' style='width:100%'>
+                        <img class='itemImage' src='./img/categories/$img.png' alt='$power' style='width:100%'>
                         <div class='cardtext'>
                             <h4><b>$power Powers</b></h4>
                             <p class='description'>$desc</p>
                             <p class='description'>Price: $cost Souls</p>
-                            <form action='index.php?category=$category' method='post'>
+                            <form class='itemButton' action='index.php?category=$category' method='post'>
                                 <input type='hidden' name='superpower_item' value='$item_serialized' />
                                 <input type='submit' name='addtobasket' value='Add To Basket'/>
                             </form>

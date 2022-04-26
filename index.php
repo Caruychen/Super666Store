@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	include 'install.php';
-	$url = "http://localhost:8080/rush00/index.php";
+	$url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME'];
 ?>
 
 <!DOCTYPE html>
