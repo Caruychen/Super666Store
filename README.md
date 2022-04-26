@@ -20,3 +20,5 @@ We provide admin access, which has higher priviledge access to the website. The 
 
 ## Server set-up
 We used mamp, packaged by [bitnami](https://bitnami.com/stack/mamp), and run our server on apache2. Simply store the site repository in the `mamp/apache2/htdocs/` directory, and the site should be able to run.
+
+Made in collaboration with [Pavel](https://github.com/pavel-arkharov)
