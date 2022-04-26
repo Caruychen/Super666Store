@@ -1,5 +1,5 @@
 <?php
-    $link = "http://$_SERVER[HTTP_HOST]/rush00/index.php";
+    $link = "http://$_SERVER[HTTP_HOST]$_SERVER[SCRIPT_NAME]";
 ?>
 
 <div class="gray leftnav">
