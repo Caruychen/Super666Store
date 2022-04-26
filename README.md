@@ -1,6 +1,8 @@
 # Super666Store
 An e-commerce store powered by Php, Html and Css. Made over a weekend at Hive Helsinki during our Php Piscine. We sell all kinds of superpowers, and you pay with Souls. We used php to dynamically generate the site's content, similar to a single page site.
 
+Video demo of the side can be found [here](https://youtu.be/5GRrzTe0eTQ). Live demo yet to be made.
+
 ## Features
 We have implemented the following features for our e-commerce store:
 ### Data management
